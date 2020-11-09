@@ -1,6 +1,6 @@
-## Kan-Ban Web Game
+# Kan-Ban Web Game
 
-# Scrape n Bake
+
 <!-- badges -->
 ![GitHub repo size](https://img.shields.io/github/repo-size/leetheperm/Q3Hackathon-kanBan)
 <!-- ![MIT license](https://img.shields.io/badge/license-MIT-lightgrey) -->
