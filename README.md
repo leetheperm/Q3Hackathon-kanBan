@@ -17,5 +17,5 @@ Create Kan-Ban style web-app game with a fixed scenario of teams and agile stori
 ## Contributors
 
 * **Lee Davies** - *DevOpsTest* - (https://github.com/LeethePerm)
-* **Harry Black** - *Main developer* - (TBC)
+* **Harry Black** - *Main developer* - (https://github.com/felination)
 * **Benjamin Frost** - * Project manager* - (TBC)
