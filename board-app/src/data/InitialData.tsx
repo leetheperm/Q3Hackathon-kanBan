@@ -1,4 +1,4 @@
-import { BoardState } from "../components/Board";
+import { BoardState } from "../components/boardComponents/Board";
 
 export const initialBoardData: BoardState = {
   items: {

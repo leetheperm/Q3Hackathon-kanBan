@@ -3,7 +3,7 @@ import { useState } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import styled from "styled-components";
 
-import { initialBoardData } from "../data/InitialData";
+import { initialBoardData } from "../../data/InitialData";
 import { BoardColumn, ColumnData } from "./BoardColumn";
 import { StoryCardData } from "./StoryCard";
 
