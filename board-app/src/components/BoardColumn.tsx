@@ -1,10 +1,11 @@
-import * as React from 'react'
-import { Droppable } from 'react-beautiful-dnd'
-import styled from 'styled-components'
+import * as React from 'react';
+import { FC } from 'react';
+import { Droppable } from 'react-beautiful-dnd';
+import styled from 'styled-components';
+
+import { StoryCard } from './StoryCard';
 
 // Import BoardItem component
-import { StoryCard } from './StoryCard'
-
 // Define types for board column element properties
 export type BoardColumnProps = {
   key: string,
@@ -44,7 +45,7 @@ const BoardColumnContent = styled.div<BoardColumnContentStylesProps>`
 `
 
 // Create and export the BoardColumn component
-export const BoardColumn: React.FC<BoardColumnProps> = (props) => {
+export const BoardColumn: FC<BoardColumnProps> = (props) => {
   return(
     <BoardColumnWrapper>
       <BoardColumnTitle>

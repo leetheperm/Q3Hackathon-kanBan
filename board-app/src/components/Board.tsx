@@ -1,10 +1,10 @@
-import * as React from 'react'
-import { DragDropContext } from 'react-beautiful-dnd'
-import styled from 'styled-components'
-import { initialBoardData } from '../data/InitialData'
-import { BoardColumn, BoardColumnProps } from './BoardColumn'
-import {useState} from 'react';
-import { BoardItemProps } from './StoryCard'
+import * as React from 'react';
+import { useState } from 'react';
+import { DragDropContext } from 'react-beautiful-dnd';
+import styled from 'styled-components';
+
+import { initialBoardData } from '../data/InitialData';
+import { BoardColumn } from './BoardColumn';
 
 // Create styles board element properties
 const BoardEl = styled.div`
