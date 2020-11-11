@@ -2,61 +2,75 @@ import { BoardState } from "../components/Board";
 
 export const initialBoardData: BoardState = {
   items: {
-    "item-1": {
-      id: "item-1",
+    "Story 1": {
+      id: "Story 1",
       content: "story 1: make board",
       designToDo: 8,
       devToDo: 12,
       testToDo: 10,
+      subscribers: 10,
     },
-    "item-2": {
-      id: "item-2",
+    "Story 2": {
+      id: "Story 2",
       content: "story 2: do soemthing else",
       designToDo: 8,
       devToDo: 12,
       testToDo: 10,
+      subscribers: 10,
     },
-    "item-3": {
-      id: "item-3",
-      content: "Content of item 3.",
+    "Story 3": {
+      id: "Story 3",
+      content: "Content of Story 3.",
       designToDo: 8,
       devToDo: 12,
       testToDo: 10,
+      subscribers: 10,
     },
-    "item-4": {
-      id: "item-4",
-      content: "Content of item 4.",
+    "Story 4": {
+      id: "Story 4",
+      content: "Content of Story 4.",
       designToDo: 8,
       devToDo: 12,
       testToDo: 10,
+      subscribers: 10,
     },
-    "item-5": {
-      id: "item-5",
-      content: "Content of item 5.",
+    "Story 5": {
+      id: "Story 5",
+      content: "Content of Story 5.",
       designToDo: 8,
       devToDo: 12,
       testToDo: 10,
+      subscribers: 10,
     },
-    "item-6": {
-      id: "item-6",
-      content: "Content of item 6.",
+    "Story 6": {
+      id: "Story 6",
+      content: "Content of Story 6.",
       designToDo: 8,
       devToDo: 12,
       testToDo: 10,
+      subscribers: 10,
     },
-    "item-7": {
-      id: "item-7",
-      content: "Content of item 7.",
+    "Story 7": {
+      id: "Story 7",
+      content: "Content of Story 7.",
       designToDo: 0,
       devToDo: 0,
       testToDo: 0,
+      subscribers: 10,
     },
   },
   columns: {
     "column-1": {
       id: "column-1",
       title: "Ready(6)",
-      itemIds: ["item-1", "item-2", "item-3", "item-4", "item-5", "item-6"],
+      itemIds: [
+        "Story 1",
+        "Story 2",
+        "Story 3",
+        "Story 4",
+        "Story 5",
+        "Story 6",
+      ],
     },
     "column-2": {
       id: "column-2",
@@ -91,7 +105,7 @@ export const initialBoardData: BoardState = {
     "column-8": {
       id: "column-8",
       title: "Complete",
-      itemIds: ["item-7"],
+      itemIds: ["Story 7"],
     },
   },
   columnsOrder: [
