@@ -1,28 +1,29 @@
-import * as React from "react";
+import React from "react";
 import { useState } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import styled from "styled-components";
+import { initialWorkerData } from "../../data/InitialWorkerData";
+import { WorkerCardData } from "./Worker";
+import { WorkerColumn, WorkerColumnData } from "./WorkerColumn";
 
-import { initialBoardData } from "../../data/InitialBoardData";
-import { BoardColumn, ColumnData } from "./BoardColumn";
-import { StoryCardData } from "./StoryCard";
-
-export type StoryCardDictionary = {
-  [index: string]: StoryCardData;
+export type WorkerCardDictionary = {
+  [index: string]: WorkerCardData;
 };
 
-export type ColumnDictionary = {
-  [index: string]: ColumnData;
+export type WorkerColumnDictionary = {
+  [index: string]: WorkerColumnData;
 };
 
-export type BoardState = {
-  items: StoryCardDictionary;
-  columns: ColumnDictionary;
+export type WorkerBoardState = {
+  workers: WorkerCardDictionary;
+  columns: WorkerColumnDictionary;
   columnsOrder: string[];
 };
 
-export const Board: React.FC = () => {
-  const [boardState, setBoardState] = useState<BoardState>(initialBoardData);
+export const WorkerBoard: React.FC = () => {
+  const [workerBoardState, setWorkerBoardState] = useState<WorkerBoardState>(
+    initialWorkerData
+  );
   // Handle drag & drop
   const onDragEnd = (result: any) => {
     const { source, destination, draggableId } = result;
@@ -41,15 +42,15 @@ export const Board: React.FC = () => {
     }
 
     // Find column from which the item was dragged from
-    const columnStart = (boardState.columns as any)[source.droppableId];
+    const columnStart = workerBoardState.columns[source.droppableId];
 
     // Find column in which the item was dropped
-    const columnFinish = (boardState.columns as any)[destination.droppableId];
+    const columnFinish = workerBoardState.columns[destination.droppableId];
 
     // Moving items in the same list
     if (columnStart === columnFinish) {
       // Get all item ids in currently active list
-      const newItemIds = Array.from(columnStart.itemIds);
+      const newItemIds = Array.from(columnStart.workerIds);
 
       // Remove the id of dragged item from its original position
       newItemIds.splice(source.index, 1);
@@ -65,19 +66,19 @@ export const Board: React.FC = () => {
 
       // Create new board state with updated data for columns
       const newState = {
-        ...boardState,
+        ...workerBoardState,
         columns: {
-          ...boardState.columns,
+          ...workerBoardState.columns,
           [newColumnStart.id]: newColumnStart,
         },
       };
 
       // Update the board state with new data
-      setBoardState(newState);
+      setWorkerBoardState(newState);
     } else {
       // Moving items from one list to another
       // Get all item ids in source list
-      const newStartItemIds = Array.from(columnStart.itemIds);
+      const newStartItemIds = Array.from(columnStart.workerIds);
 
       // Remove the id of dragged item from its original position
       newStartItemIds.splice(source.index, 1);
@@ -85,11 +86,11 @@ export const Board: React.FC = () => {
       // Create new, updated, object with data for source column
       const newColumnStart = {
         ...columnStart,
-        itemIds: newStartItemIds,
+        workerIds: newStartItemIds,
       };
 
       // Get all item ids in destination list
-      const newFinishItemIds = Array.from(columnFinish.itemIds);
+      const newFinishItemIds = Array.from(columnFinish.workerIds);
 
       // Insert the id of dragged item to the new position in destination list
       newFinishItemIds.splice(destination.index, 0, draggableId);
@@ -97,46 +98,48 @@ export const Board: React.FC = () => {
       // Create new, updated, object with data for destination column
       const newColumnFinish = {
         ...columnFinish,
-        itemIds: newFinishItemIds,
+        workerIds: newFinishItemIds,
       };
 
       // Create new board state with updated data for both, source and destination columns
       const newState = {
-        ...boardState,
+        ...workerBoardState,
         columns: {
-          ...boardState.columns,
+          ...workerBoardState.columns,
           [newColumnStart.id]: newColumnStart,
           [newColumnFinish.id]: newColumnFinish,
         },
       };
 
       // Update the board state with new data
-      setBoardState(newState);
+      setWorkerBoardState(newState);
     }
   };
 
   return (
-    <BoardEl>
+    <WorkerBoardE1>
       <DragDropContext onDragEnd={onDragEnd}>
-        {boardState.columnsOrder.map((columnId) => {
+        {workerBoardState.columnsOrder.map((columnId) => {
           // Get id of the current column
-          const column = boardState.columns[columnId];
+          const column = workerBoardState.columns[columnId];
 
           // Get item belonging to the current column
-          const items = column.itemIds.map(
-            (itemId: string) => boardState.items[itemId]
+          const workers = column.workerIds.map(
+            (workerId: string) => workerBoardState.workers[workerId]
           );
 
-          // Render the BoardColumn component
-          return <BoardColumn key={column.id} column={column} items={items} />;
+          return (
+            <WorkerColumn key={column.id} column={column} workers={workers} />
+          );
         })}
       </DragDropContext>
-    </BoardEl>
+    </WorkerBoardE1>
   );
 };
 
-const BoardEl = styled.div`
+const WorkerBoardE1 = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  margin-bottom: 25px;
 `;
