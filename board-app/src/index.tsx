@@ -1,9 +1,12 @@
+import { createBrowserHistory } from "history";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { Router } from "react-router";
 import { createGlobalStyle } from "styled-components";
 
-// Import main Board component
-import { Board } from "./components/boardComponents/Board";
+import { PageContent } from "./components/PageContent";
+
+const history = createBrowserHistory({ basename: "/" });
 
 // Use createGlobalStyle to change the background of 'body' element
 const GlobalStyle = createGlobalStyle`
@@ -15,8 +18,10 @@ const GlobalStyle = createGlobalStyle`
 // Create component for the page
 const Page = () => (
   <>
-    <Board />
-    <GlobalStyle />
+    <Router history={history}>
+      <PageContent />
+      <GlobalStyle />
+    </Router>
   </>
 );
 
