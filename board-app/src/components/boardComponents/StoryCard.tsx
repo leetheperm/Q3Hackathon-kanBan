@@ -2,6 +2,7 @@ import * as React from "react";
 import { FC } from "react";
 import { Draggable } from "react-beautiful-dnd";
 import styled from "styled-components";
+import { DraggableStyleProps } from "../Utils";
 
 export type StoryCardData = {
   id: string;
@@ -15,10 +16,6 @@ export type StoryCardData = {
 export type StoryCardProps = {
   index: number;
   item: StoryCardData;
-};
-
-type StoryCardStyleProps = {
-  isDragging: boolean;
 };
 
 export const StoryCard: FC<StoryCardProps> = (props) => {
@@ -38,7 +35,7 @@ export const StoryCard: FC<StoryCardProps> = (props) => {
   );
 };
 
-const StoryCardInner: FC<StoryCardProps & StoryCardStyleProps> = (props) => {
+const StoryCardInner: FC<StoryCardProps & DraggableStyleProps> = (props) => {
   let subscribers: string = "";
   if (props.item.subscribers > 0) {
     subscribers = "Subs: " + props.item.subscribers;
@@ -84,7 +81,7 @@ const TestDiv = styled(InnerDiv)`
   margin: 1px;
 `;
 
-const StyledDiv = styled.div<StoryCardStyleProps>`
+const StyledDiv = styled.div<DraggableStyleProps>`
   padding: 3px;
   background-color: ${(props) => (props.isDragging ? "#d3e4ee" : "black")};
   border-radius: 4px;
