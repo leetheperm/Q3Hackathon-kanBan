@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
 
-import { StoryCard, StoryCardData } from "./StoryCard";
+import { StoryCard } from "./StoryCard";
 
 // Import BoardItem component
 // Define types for board column element properties
