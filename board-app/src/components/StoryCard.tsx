@@ -3,14 +3,36 @@ import { FC } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import styled from 'styled-components';
 
+export type StoryCardData = {
+  id: string
+  content: string
+  designToDo: number,
+  devToDo: number,
+  testToDo: number
+}
 
 export type StoryCardProps = {
   index: number
-  item: any
+  item: StoryCardData
 }
 
 type StoryCardStyleProps = {
   isDragging: boolean
+}
+
+export const StoryCard: FC<StoryCardProps> = (props) => {
+  return <Draggable draggableId={props.item.id} index={props.index}>
+    {(provided:any, snapshot:any) => (
+      <BoardItemEl
+        {...provided.draggableProps}
+        {...provided.dragHandleProps}
+        ref={provided.innerRef}
+        isDragging={snapshot.isDragging}
+      >
+        {props.item.content}
+      </BoardItemEl>
+    )}
+  </Draggable>
 }
 
 const BoardItemEl = styled.div<StoryCardStyleProps>`
@@ -27,18 +49,3 @@ const BoardItemEl = styled.div<StoryCardStyleProps>`
     margin-top: 4px;
   }
 `
-
-export const StoryCard: FC<StoryCardProps> = (props) => {
-  return <Draggable draggableId={props.item.id} index={props.index}>
-    {(provided:any, snapshot:any) => (
-      <BoardItemEl
-        {...provided.draggableProps}
-        {...provided.dragHandleProps}
-        ref={provided.innerRef}
-        isDragging={snapshot.isDragging}
-      >
-        {props.item.content}
-      </BoardItemEl>
-    )}
-  </Draggable>
-}
