@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import { initialBoardData } from '../data/InitialData';
 import { BoardColumn } from './BoardColumn';
 
-// Create styles board element properties
 const BoardEl = styled.div`
   display: flex;
   align-items: flex-start;
