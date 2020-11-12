@@ -4,6 +4,7 @@ import { DragDropContext } from "react-beautiful-dnd";
 import styled from "styled-components";
 
 import { initialWorkerData } from "../../data/InitialWorkerData";
+import { RowDiv } from "../Utils";
 import { WorkerCardData, WorkerRole } from "./Worker";
 import { WorkerColumn, WorkerColumnData } from "./WorkerColumn";
 
@@ -240,22 +241,20 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
         </WorkerBoardE1>
       </>
       <RowDiv>
-        <ColDiv>
-          <DesignDiceButton
-            onClick={() => {
-              diceClicked(
-                "worker-col-1",
-                WorkerRole.Designer,
-                designDiceState,
-                setDesignDiceState,
-                setDesignButtonText
-              );
-            }}
-            disabled={designDiceState === DiceState.Spent}
-          >
-            {designButtonText}
-          </DesignDiceButton>
-        </ColDiv>
+        <DesignDiceButton
+          onClick={() => {
+            diceClicked(
+              "worker-col-1",
+              WorkerRole.Designer,
+              designDiceState,
+              setDesignDiceState,
+              setDesignButtonText
+            );
+          }}
+          disabled={designDiceState === DiceState.Spent}
+        >
+          {designButtonText}
+        </DesignDiceButton>
 
         <DevDiceButton
           onClick={() => {
@@ -295,16 +294,6 @@ const WorkerBoardE1 = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 25px;
-`;
-
-const RowDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-const ColDiv = styled.div`
-  display: flex;
-  flex-direction: col;
 `;
 
 const DesignDiceButton = styled.button`

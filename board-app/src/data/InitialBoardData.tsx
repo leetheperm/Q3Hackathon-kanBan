@@ -20,7 +20,6 @@ export const initialBoardData: BoardState = {
     },
     "Story 3": {
       id: "Story 3",
-      content: "Content of Story 3.",
       designToDo: 11,
       devToDo: 12,
       testToDo: 11,
@@ -57,7 +56,7 @@ export const initialBoardData: BoardState = {
       devToDo: 13,
       testToDo: 14,
       subscribers: 12,
-    },   
+    },
     "Story 8": {
       id: "Story 8",
       content: "Content of Story 8.",
@@ -137,7 +136,7 @@ export const initialBoardData: BoardState = {
       devToDo: 13,
       testToDo: 6,
       subscribers: 0,
-    }
+    },
   },
   columns: {
     "column-1": {
@@ -152,7 +151,7 @@ export const initialBoardData: BoardState = {
         "Story 6",
         "Story 7",
         "Story 8",
-        "Story 9"
+        "Story 9",
       ],
     },
     "column-2": {
@@ -178,14 +177,15 @@ export const initialBoardData: BoardState = {
     "column-6": {
       id: "column-6",
       title: "Test Doing(3)",
-      itemIds: [        
-      "Story 10",
-      "Story 11",
-      "Story 12",
-      "Story 13",
-      "Story 14",
-      "Story 15",
-      "Intangeable 2", ],
+      itemIds: [
+        "Story 10",
+        "Story 11",
+        "Story 12",
+        "Story 13",
+        "Story 14",
+        "Story 15",
+        "Intangeable 2",
+      ],
     },
     "column-7": {
       id: "column-7",

@@ -128,7 +128,15 @@ export const Board: React.FC = () => {
           );
 
           // Render the BoardColumn component
-          return <BoardColumn key={column.id} column={column} items={items} />;
+          return (
+            <BoardColumn
+              key={column.id}
+              column={column}
+              items={items}
+              boardState={boardState}
+              setBoardState={setBoardState}
+            />
+          );
         })}
       </DragDropContext>
     </BoardEl>
