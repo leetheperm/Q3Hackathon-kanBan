@@ -104,7 +104,7 @@ export const initialBoardData: BoardState = {
     },
     "column-8": {
       id: "column-8",
-      title: "Complete",
+      title: "Deployed",
       itemIds: ["Story 7"],
     },
   },
