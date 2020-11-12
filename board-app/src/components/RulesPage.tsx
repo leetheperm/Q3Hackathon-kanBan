@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import { isArrayLiteralExpression } from "typescript";
 
 export const RulesPage: FC = () => {
   return (
@@ -95,8 +96,17 @@ export const RulesPage: FC = () => {
 
 const Para = styled.p`
   color: white;
+  font-family:helvetica;
+  text-align: center;
+  font-size:18px;
+  width:70%;
+  margin: 0 auto;
+  line-height: 1.7em;
 `;
 const Header = styled.h1`
-  color: white
-  text-decoration: underline
+  color: white;
+  font-family: helvetica;
+  text-decoration: underline;
+  text-align:center;
 `;
+

@@ -52,17 +52,19 @@ export const MainPage: FC = () => {
 };
 
 const StyledCollapsible = styled(Collapsible)`
-  padding: 3px;
-  background-color: orange;
+  padding: 5px;
+  background-color: #2D3E63;
   color: white;
   border-radius: 4px;
   transition: background-color 0.25s ease-out;
   margin: 10px;
   text-align: center;
   font-size: 150%;
+  width:30%;
+  margin: 0 auto;
 
   &:hover {
-    background-color: #f7fafc;
+    background-color: #3F76BF;
   }
 
   & + & {
@@ -71,17 +73,21 @@ const StyledCollapsible = styled(Collapsible)`
 `;
 
 const Header = styled.h1`
-  color: white;
+  color:#3F76BF;
+  font-family:helvetica;
   text-decoration: underline;
+  text-align: center;
 `;
 const Header3 = styled.h3`
   color: white;
   font-size: 175%;
+  font-family:helvetica;
   text-align: center;
 `;
 
 const StyledAlert = styled(Alert)`
   background-color: white;
+  font-family:helvetica;
   color: black;
   border-radius: 5px;
   padding: 5px;
