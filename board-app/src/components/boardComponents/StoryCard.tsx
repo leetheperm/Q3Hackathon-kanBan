@@ -9,6 +9,7 @@ import { BoardState } from "./Board";
 export type StoryCardData = {
   id: string;
   content?: string;
+  blocked?: number;
   designToDo: number;
   devToDo: number;
   testToDo: number;
@@ -71,6 +72,19 @@ const StoryCardInner: FC<StoryCardProps & DraggableStyleProps> = (props) => {
     props.setBoardState(newBoardState);
   };
 
+  const blockedChanged = (change: React.ChangeEvent<HTMLInputElement>) => {
+    var story = props.boardState.items[props.item.id];
+    story.blocked = parseInt(change.target.value);
+    const newBoardState = {
+      ...props.boardState,
+      items: {
+        ...props.boardState.items,
+        [props.item.id]: story,
+      },
+    };
+    props.setBoardState(newBoardState);
+  };
+
   const testChanged = (change: React.ChangeEvent<HTMLInputElement>) => {
     var story = props.boardState.items[props.item.id];
     story.testToDo = parseInt(change.target.value);
@@ -101,6 +115,20 @@ const StoryCardInner: FC<StoryCardProps & DraggableStyleProps> = (props) => {
           onChange={designChanged}
         />
       </RowDiv>
+      {!!props.item.blocked && (
+        <RowDiv>
+          <BlockedDiv> {"Blocked!: "}</BlockedDiv>
+          <StyledInput
+            type="number"
+            id="blocked"
+            name="blocked"
+            min="0"
+            max="10000"
+            value={props.item.blocked}
+            onChange={blockedChanged}
+          />
+        </RowDiv>
+      )}
       <RowDiv>
         <DevDiv> {"Dev to do: "}</DevDiv>
         <StyledInput
@@ -148,6 +176,12 @@ const DesignDiv = styled(InnerDiv)`
 
 const DevDiv = styled(InnerDiv)`
   background-color: blue;
+  color: White;
+  margin: 1px;
+`;
+
+const BlockedDiv = styled(InnerDiv)`
+  background-color: pink;
   color: White;
   margin: 1px;
 `;

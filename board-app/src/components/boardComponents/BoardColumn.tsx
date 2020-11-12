@@ -4,13 +4,13 @@ import { Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
 import { BoardState } from "./Board";
 
-import { StoryCard } from "./StoryCard";
+import { StoryCard, StoryCardData } from "./StoryCard";
 
 // Define types for board column element properties
 export type BoardColumnProps = {
   key: string;
   column: any;
-  items: any;
+  items: StoryCardData[];
   boardState: BoardState;
   setBoardState: (value: React.SetStateAction<BoardState>) => void;
 };
@@ -29,9 +29,22 @@ type BoardColumnContentStylesProps = {
 
 // Create and export the BoardColumn component
 export const BoardColumn: FC<BoardColumnProps> = (props) => {
+  let title: string = props.column.title;
+  if (props.column.title === "Deployed") {
+    title = title + " - Total Subs: ";
+    const array = props.items.map(
+      (item: StoryCardData, index: number) => item.subscribers
+    );
+    if (array.length > 0) {
+      const totalSubs = array.reduce(function (a: number, b: number) {
+        return a + b;
+      });
+      title = title + totalSubs;
+    }
+  }
   return (
     <BoardColumnWrapper>
-      <BoardColumnTitle>{props.column.title}</BoardColumnTitle>
+      <BoardColumnTitle>{title}</BoardColumnTitle>
 
       <Droppable droppableId={props.column.id}>
         {(provided, snapshot) => (

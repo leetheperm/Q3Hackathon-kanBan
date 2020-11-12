@@ -21,8 +21,32 @@ export type BoardState = {
   columnsOrder: string[];
 };
 
-export const Board: React.FC = () => {
+type BoardProps = {
+  dayNumber: number;
+};
+
+export const Board: React.FC<BoardProps> = (props) => {
   const [boardState, setBoardState] = useState<BoardState>(initialBoardData);
+
+  React.useEffect(() => {
+    if (props.dayNumber === 10) {
+      const testColumn = boardState.columns["column-6"];
+      if (testColumn.itemIds.length > 0) {
+        const storyId = testColumn.itemIds[0];
+        var story = boardState.items[storyId];
+        story.blocked = 10;
+        const newBoardState = {
+          ...boardState,
+          items: {
+            ...boardState.items,
+            story,
+          },
+        };
+        setBoardState(newBoardState);
+      }
+    }
+  }, [props.dayNumber]);
+
   // Handle drag & drop
   const onDragEnd = (result: any) => {
     const { source, destination, draggableId } = result;
