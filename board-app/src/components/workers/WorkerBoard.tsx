@@ -29,6 +29,7 @@ enum DiceState {
 }
 
 type WorkerBoardProps = {
+  dayNumber: number;
   incrementDay: () => void;
 };
 
@@ -53,6 +54,30 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
     DiceState.Ready
   );
   const [testButtonText, setTestButtonText] = useState<String>("Roll for Test");
+
+  useEffect(() => {
+    if (props.dayNumber === 12) {
+      setWorkerBoardState(initialWorkerData);
+    }
+    if (props.dayNumber === 16) {
+      var testColumn = workerBoardState.columns["worker-col-3"];
+      testColumn.workerIds.push("Test3");
+      var newBoardState: WorkerBoardState = {
+        ...workerBoardState,
+        workers: {
+          ...workerBoardState.workers,
+          Test3: {
+            id: "Test3",
+            role: WorkerRole.Tester,
+          },
+        },
+        columns: {
+          ...workerBoardState.columns,
+        },
+      };
+      setWorkerBoardState(newBoardState);
+    }
+  }, [props.dayNumber]);
 
   // Handle drag & drop
   const onDragEnd = (result: any) => {

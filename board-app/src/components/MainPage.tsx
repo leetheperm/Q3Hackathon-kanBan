@@ -30,6 +30,7 @@ export const MainPage: FC = () => {
       </StyledCollapsible>
       <StyledCollapsible trigger="Employees">
         <WorkerBoard
+          dayNumber={dayNumber}
           incrementDay={() => {
             setDayNumber(dayNumber + 1);
           }}
