@@ -123,7 +123,7 @@ export const initialBoardData: BoardState = {
       subscribers: 7,
     },
     "Intangeable 1": {
-      id: "Intangeable 2",
+      id: "Intangeable 1",
       content: "Database upgrade",
       designToDo: 4,
       devToDo: 5,
