@@ -32,6 +32,7 @@ export const MainPage: FC = () => {
 <p>•	Each story card has a number of subscribers (subs) you will gain by completing each card. Your business model runs of making money from subscribers, so more story cards completed – more money earned!</p>
 <p>•	Each story has a numerical value of the amount of work needed competition for both; Design, Development and Testing.</p>
 <p>•	You must complete each division of work before moving the story card on to the right of the board. </p>
+<p>•  Billing is every three days from the 9th day of the cycle.</p>
 <p>•	Each dice, per column, represents the number of workers for each department, for example if 3 dice were in development that represents 3 workers. </p>
 <p>•	You will roll each column of dice once per day, starting with Testing, then Development and lastly Design – the aim of KanBan is pulling work to the right (competition) rather than pushing work in. </p>
 <p>•	The sum of all the dice rolled per column per day is the total amount of work that will go into the cards within the column. </p>
