@@ -122,9 +122,17 @@ export const initialBoardData: BoardState = {
       testToDo: 8,
       subscribers: 7,
     },
+    "Intangeable 1": {
+      id: "Intangeable 2",
+      content: "Database upgrade",
+      designToDo: 4,
+      devToDo: 5,
+      testToDo: 10,
+      subscribers: 0,
+    },
     "Intangeable 2": {
       id: "Intangeable 2",
-      content: "Content of Story 16.",
+      content: "Refactor core system",
       designToDo: 1,
       devToDo: 13,
       testToDo: 6,
