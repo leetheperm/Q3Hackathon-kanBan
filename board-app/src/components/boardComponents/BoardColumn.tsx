@@ -40,6 +40,8 @@ export const BoardColumn: FC<BoardColumnProps> = (props) => {
         return a + b;
       });
       title = title + totalSubs;
+    } else {
+      title += "0";
     }
   }
   return (
