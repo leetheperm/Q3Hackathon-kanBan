@@ -60,6 +60,7 @@ const StyledCollapsible = styled(Collapsible)`
   margin: 10px;
   text-align: center;
   font-size: 150%;
+  font-family:helvetica;
   width:30%;
   margin: 0 auto;
 
@@ -75,7 +76,6 @@ const StyledCollapsible = styled(Collapsible)`
 const Header = styled.h1`
   color:#3F76BF;
   font-family:helvetica;
-  text-decoration: underline;
   text-align: center;
 `;
 const Header3 = styled.h3`
