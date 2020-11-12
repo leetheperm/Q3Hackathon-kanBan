@@ -4,6 +4,7 @@ import { DragDropContext } from "react-beautiful-dnd";
 import styled from "styled-components";
 
 import { initialWorkerData } from "../../data/InitialWorkerData";
+import { RowDiv } from "../Utils";
 import { WorkerCardData, WorkerRole } from "./Worker";
 import { WorkerColumn, WorkerColumnData } from "./WorkerColumn";
 
@@ -42,19 +43,16 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
   const [designButtonText, setDesignButtonText] = useState<String>(
     "Roll for Design"
   );
-  const [designDivText, setDesignDivText] = useState<String>("");
 
   const [devDiceState, setDevDiceState] = useState<DiceState>(DiceState.Ready);
   const [devButtonText, setDevButtonText] = useState<String>(
     "Roll for Development"
   );
-  const [devDivText, setDevDivText] = useState<String>("");
 
   const [testDiceState, setTestDiceState] = useState<DiceState>(
     DiceState.Ready
   );
   const [testButtonText, setTestButtonText] = useState<String>("Roll for Test");
-  const [testDivText, setTestDivText] = useState<String>("");
 
   // Handle drag & drop
   const onDragEnd = (result: any) => {
@@ -155,7 +153,7 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
   const rollColumn = (
     colId: string,
     workerRole: WorkerRole,
-    setDivText: (value: React.SetStateAction<String>) => void
+    setButtonText: (value: React.SetStateAction<String>) => void
   ) => {
     const designersInCol = workerBoardState.columns[colId].workerIds;
 
@@ -169,7 +167,7 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
       if (worker.role === workerRole) roll = roll * 2;
       totalRolled += roll;
     }
-    setDivText("You've rolled: " + totalRolled);
+    setButtonText("You've rolled: " + totalRolled);
   };
 
   const diceClicked = (
@@ -177,16 +175,14 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
     workerRole: WorkerRole,
     diceState: DiceState,
     setDiceState: (value: React.SetStateAction<DiceState>) => void,
-    setDivText: (value: React.SetStateAction<String>) => void,
     setButtonText: (value: React.SetStateAction<String>) => void
   ) => {
     switch (diceState) {
       case DiceState.Ready:
-        rollColumn(colId, workerRole, setDivText);
-        setButtonText("Click here when you've spent it");
+        rollColumn(colId, workerRole, setButtonText);
         break;
       case DiceState.Rolled:
-        setDivText("You've used all your work for today");
+        setButtonText("You've used all your work for today");
         break;
     }
     setDiceState(diceState + 1);
@@ -208,15 +204,12 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
     if (allStatesSpent(designDiceState, devDiceState, testDiceState)) {
       setDesignDiceState(DiceState.Ready);
       setDesignButtonText("Roll for Design");
-      setDesignDivText("");
 
       setDevDiceState(DiceState.Ready);
       setDevButtonText("Roll for Development");
-      setDevDivText("");
 
       setTestDiceState(DiceState.Ready);
       setTestButtonText("Roll for Test");
-      setTestDivText("");
 
       props.incrementDay();
     }
@@ -247,7 +240,7 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
           </DragDropContext>
         </WorkerBoardE1>
       </>
-      <>
+      <RowDiv>
         <DesignDiceButton
           onClick={() => {
             diceClicked(
@@ -255,7 +248,6 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
               WorkerRole.Designer,
               designDiceState,
               setDesignDiceState,
-              setDesignDivText,
               setDesignButtonText
             );
           }}
@@ -263,7 +255,7 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
         >
           {designButtonText}
         </DesignDiceButton>
-        <div>{designDivText}</div>
+
         <DevDiceButton
           onClick={() => {
             diceClicked(
@@ -271,7 +263,6 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
               WorkerRole.Developer,
               devDiceState,
               setDevDiceState,
-              setDevDivText,
               setDevButtonText
             );
           }}
@@ -279,7 +270,6 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
         >
           {devButtonText}
         </DevDiceButton>
-        <div>{devDivText}</div>
         <TestDiceButton
           onClick={() => {
             diceClicked(
@@ -287,7 +277,6 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
               WorkerRole.Tester,
               testDiceState,
               setTestDiceState,
-              setTestDivText,
               setTestButtonText
             );
           }}
@@ -295,8 +284,7 @@ export const WorkerBoard: FC<WorkerBoardProps> = (props) => {
         >
           {testButtonText}
         </TestDiceButton>
-        <div>{testDivText}</div>
-      </>
+      </RowDiv>
     </>
   );
 };
@@ -313,6 +301,7 @@ const DesignDiceButton = styled.button`
   background-color: red;
   color: white;
   border-color: black;
+  margin-left: 500px;
 `;
 
 const DevDiceButton = styled.button`
@@ -320,6 +309,7 @@ const DevDiceButton = styled.button`
   background-color: blue;
   color: white;
   border-color: black;
+  margin-left: 400px;
 `;
 
 const TestDiceButton = styled.button`
@@ -327,4 +317,5 @@ const TestDiceButton = styled.button`
   background-color: orange;
   color: white;
   border-color: black;
+  margin-left: 400px;
 `;

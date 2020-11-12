@@ -2,15 +2,17 @@ import * as React from "react";
 import { FC } from "react";
 import { Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
+import { BoardState } from "./Board";
 
 import { StoryCard } from "./StoryCard";
 
-// Import BoardItem component
 // Define types for board column element properties
 export type BoardColumnProps = {
   key: string;
   column: any;
   items: any;
+  boardState: BoardState;
+  setBoardState: (value: React.SetStateAction<BoardState>) => void;
 };
 
 export type ColumnData = {
@@ -39,7 +41,12 @@ export const BoardColumn: FC<BoardColumnProps> = (props) => {
             isDraggingOver={snapshot.isDraggingOver}
           >
             {props.items.map((item: any, index: number) => (
-              <StoryCard item={item} index={index} />
+              <StoryCard
+                item={item}
+                index={index}
+                boardState={props.boardState}
+                setBoardState={props.setBoardState}
+              />
             ))}
             {provided.placeholder}
           </BoardColumnContent>
