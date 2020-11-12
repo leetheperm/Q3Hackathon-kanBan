@@ -10,15 +10,17 @@ import { RulesPage } from "./RulesPage";
 import { WorkerBoard } from "./workers/WorkerBoard";
 
 export const MainPage: FC = () => {
-  const [dayNumber, setDayNumber] = useState(9);
+  const [dayNumber, setDayNumber] = useState(8);
   const [showDayCard, setShowDayCard] = useState(false);
   const [dayCardText, setDayCardText] = useState<String>("");
 
   const closeDayCard = () => setShowDayCard(false);
 
   useEffect(() => {
-    setDayCardText(dayCards[dayNumber]);
-    setShowDayCard(true);
+    if (dayNumber > 8) {
+      setDayCardText(dayCards[dayNumber]);
+      setShowDayCard(true);
+    }
   }, [dayNumber]);
 
   return (
