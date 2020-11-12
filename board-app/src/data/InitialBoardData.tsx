@@ -178,11 +178,6 @@ export const initialBoardData: BoardState = {
     },
     "column-7": {
       id: "column-7",
-      title: "Test Done(3)",
-      itemIds: [],
-    },
-    "column-8": {
-      id: "column-8",
       title: "Deployed",
       itemIds: [],
     },
@@ -195,6 +190,5 @@ export const initialBoardData: BoardState = {
     "column-5",
     "column-6",
     "column-7",
-    "column-8",
   ],
 };
