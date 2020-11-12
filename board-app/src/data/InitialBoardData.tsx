@@ -141,7 +141,7 @@ export const initialBoardData: BoardState = {
   columns: {
     "column-1": {
       id: "column-1",
-      title: "Ready(6)",
+      title: "Ready WIP:6",
       itemIds: [
         "Story 11",
         "Story 12",
@@ -153,27 +153,27 @@ export const initialBoardData: BoardState = {
     },
     "column-2": {
       id: "column-2",
-      title: "Design Doing (3)",
+      title: "Designing (Total Design WIP: 3)",
       itemIds: ["Story 9", "Story 10"],
     },
     "column-3": {
       id: "column-3",
-      title: "Design Done(3)",
+      title: "Design Done (Total Design WIP: 3)",
       itemIds: ["Story 8"],
     },
     "column-4": {
       id: "column-4",
-      title: "Dev Doing(5)",
+      title: "In Dev (Total Dev WIP: 5)",
       itemIds: ["Story 6", "Story 7", "Intangible 1"],
     },
     "column-5": {
       id: "column-5",
-      title: "Dev Done(5)",
+      title: "Dev Done (Total Dev WIP: 5)",
       itemIds: ["Story 4", "Story 5"],
     },
     "column-6": {
       id: "column-6",
-      title: "Test Doing(3)",
+      title: "Testing (WIP: 3)",
       itemIds: ["Story 1", "Story 2", "Story 3"],
     },
     "column-7": {
