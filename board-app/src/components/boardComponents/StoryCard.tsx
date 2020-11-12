@@ -40,9 +40,6 @@ export const StoryCard: FC<StoryCardProps> = (props) => {
 };
 
 const StoryCardInner: FC<StoryCardProps & DraggableStyleProps> = (props) => {
-  const [dev, setDev] = useState(props.item.devToDo);
-  const [test, setTest] = useState(props.item.testToDo);
-
   let subscribers: string = "";
   if (props.item.subscribers > 0) {
     subscribers = "Subs: " + props.item.subscribers;
