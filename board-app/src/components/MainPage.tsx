@@ -10,7 +10,7 @@ import { RulesPage } from "./RulesPage";
 import { WorkerBoard } from "./workers/WorkerBoard";
 
 export const MainPage: FC = () => {
-  const [dayNumber, setDayNumber] = useState(8);
+  const [dayNumber, setDayNumber] = useState(1);
   const [showDayCard, setShowDayCard] = useState(false);
   const [dayCardText, setDayCardText] = useState<String>("");
 
