@@ -85,9 +85,9 @@ const BoardColumnWrapper = styled.div`
 
 // Create styles for BoardColumnTitle element
 const BoardColumnTitle = styled.h2`
-  font: 28px sans-serif;
+  font: 22px sans-serif;
   font-weight: bold;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 `;
 
 // Create styles for BoardColumnContent element

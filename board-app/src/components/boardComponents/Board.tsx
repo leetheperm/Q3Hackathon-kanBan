@@ -171,7 +171,8 @@ const BoardEl = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  width: 20%;
-  
+  justify-content: space-between;  
+  overflow: scroll;
+  color: #28464B;
+  text-align: center;
 `;

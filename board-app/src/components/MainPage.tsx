@@ -53,7 +53,7 @@ export const MainPage: FC = () => {
 
 const StyledCollapsible = styled(Collapsible)`
   padding: 10px;
-  background-color: #8DB9B9;
+  background-color: #2C8C99;
   color: white;
   border-radius: 10px;
   transition: background-color 0.25s ease-out;
@@ -74,17 +74,18 @@ const StyledCollapsible = styled(Collapsible)`
 `;
 
 const Header = styled.h1`
-  color:#8DB9B9;
+  color:#42D9C8;
   font-family:helvetica;
   text-align: center;
   margin-top: 45px;
+  font-size: 40px;
 `;
 const Header3 = styled.h3`
   color: white;
   font-size: 23px;
   font-family:helvetica;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
 `;
 
 const StyledAlert = styled(Alert)`

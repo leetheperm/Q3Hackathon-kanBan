@@ -162,7 +162,8 @@ const InnerDiv = styled.div`
   background-color: white;
   font-family: Helvetica, sans-serif;
   white-space: pre;
-  width: 150px;
+  width: 100%;
+  padding: 5px;
   
 `;
 
@@ -170,46 +171,44 @@ const TitleDiv = styled(InnerDiv)`
   box-sizing: border-box;
   font-size: 125%;
   margin-bottom: 2px;
-  width: 140px;
-  
+  width: 100%;
+  background-color: #231123;
+  color: white;
 `;
 
 const DesignDiv = styled(InnerDiv)`
   background-color: #82204A;
   box-sizing: border-box;
   color: White;
-  margin: 1px;
-  width: 100px;
+  width: 100%;
 `;
 
 const DevDiv = styled(InnerDiv)`
   box-sizing: border-box;   
   background-color: #558C8C;
   color: White;
-  
-  width: 100px;
+  width: 100%;
 `;
 
 const BlockedDiv = styled(InnerDiv)`
   background-color: #AF5AAF;
   box-sizing: border-box;
   color: White;
-
-  width: 100px;
+  width: 100%;
 `;
 
 const TestDiv = styled(InnerDiv)`
   background-color: #E8DB7D;
   box-sizing: border-box;
   color: black;
-  width: 100px;
+  width: 100%;
 `;
 
 const StyledDiv = styled.div<DraggableStyleProps>`
   box-sizing: border-box;
   padding: 3px;
-  background-color: ${(props) => (props.isDragging ? "#d3e4ee" : "black")};
-  border-radius: 4px;
+  background-color: ${(props) => (props.isDragging ? "#A6C9C9" : "#e5eff5")};
+  border-radius: 5px;
   transition: background-color 0.25s ease-out;
   margin: 10px;
   
@@ -225,6 +224,9 @@ const StyledDiv = styled.div<DraggableStyleProps>`
 
 const StyledInput = styled.input`
   box-sizing: border-box;
-  width: 30px;
+  width: 50px;
+  padding: 0;
+  margin: 0;
   text-align: right;
+  border: 1px solid #e5eff5;
 `;
