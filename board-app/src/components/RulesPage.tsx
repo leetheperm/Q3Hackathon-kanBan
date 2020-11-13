@@ -95,16 +95,17 @@ export const RulesPage: FC = () => {
 };
 
 const Para = styled.p`
-  color: white;
+  color: #EFF7FF;
   font-family:helvetica;
   text-align: left;
   font-size:18px;
   width:50%;
-  margin: 0 auto;
+  font-weight: lighter;
+  margin: 10px auto;
   padding: 10px;
 `;
 const Header = styled.h1`
-  color: white;
+  color: #EFF7FF;
   font-family: helvetica;
   text-align:center;
 `;

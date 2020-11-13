@@ -158,46 +158,61 @@ const StoryCardInner: FC<StoryCardProps & DraggableStyleProps> = (props) => {
 };
 
 const InnerDiv = styled.div`
+  box-sizing: border-box;
   background-color: white;
+  font-family: Helvetica, sans-serif;
   white-space: pre;
+  width: 150px;
+  
 `;
 
 const TitleDiv = styled(InnerDiv)`
+  box-sizing: border-box;
   font-size: 125%;
-  text-decoration: underline;
   margin-bottom: 2px;
+  width: 140px;
+  
 `;
 
 const DesignDiv = styled(InnerDiv)`
-  background-color: red;
+  background-color: #82204A;
+  box-sizing: border-box;
   color: White;
   margin: 1px;
+  width: 100px;
 `;
 
 const DevDiv = styled(InnerDiv)`
-  background-color: blue;
+  box-sizing: border-box;   
+  background-color: #558C8C;
   color: White;
-  margin: 1px;
+  
+  width: 100px;
 `;
 
 const BlockedDiv = styled(InnerDiv)`
-  background-color: pink;
+  background-color: #AF5AAF;
+  box-sizing: border-box;
   color: White;
-  margin: 1px;
+
+  width: 100px;
 `;
 
 const TestDiv = styled(InnerDiv)`
-  background-color: orange;
-  color: White;
-  margin: 1px;
+  background-color: #E8DB7D;
+  box-sizing: border-box;
+  color: black;
+  width: 100px;
 `;
 
 const StyledDiv = styled.div<DraggableStyleProps>`
+  box-sizing: border-box;
   padding: 3px;
   background-color: ${(props) => (props.isDragging ? "#d3e4ee" : "black")};
   border-radius: 4px;
   transition: background-color 0.25s ease-out;
   margin: 10px;
+  
 
   &:hover {
     background-color: #f7fafc;
@@ -209,6 +224,7 @@ const StyledDiv = styled.div<DraggableStyleProps>`
 `;
 
 const StyledInput = styled.input`
+  box-sizing: border-box;
+  width: 30px;
   text-align: right;
-  width: 50px;
 `;
