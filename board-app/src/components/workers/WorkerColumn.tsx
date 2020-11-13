@@ -49,6 +49,7 @@ const WorkerColumnWrapper = styled.div`
   padding: 8px;
   background-color: #e5eff5;
   border-radius: 4px;
+  font-family: Helvetica, sans-serif;
 
   & + & {
     margin-left: 12px;
@@ -59,6 +60,8 @@ const WorkerColumnWrapper = styled.div`
 const WorkerColumnTitle = styled.h2`
   font: 14px sans-serif;
   margin-bottom: 12px;
+  font-family: Helvetica, sans-serif;
+
 `;
 
 // Create styles for WorkerColumnContent element

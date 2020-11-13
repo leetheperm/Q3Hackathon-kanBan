@@ -52,20 +52,20 @@ export const MainPage: FC = () => {
 };
 
 const StyledCollapsible = styled(Collapsible)`
-  padding: 5px;
-  background-color: #2D3E63;
+  padding: 10px;
+  background-color: #2C8C99;
   color: white;
-  border-radius: 4px;
+  border-radius: 10px;
   transition: background-color 0.25s ease-out;
-  margin: 10px;
   text-align: center;
   font-size: 150%;
   font-family:helvetica;
   width:30%;
-  margin: 0 auto;
+  margin: 30px auto;
 
   &:hover {
-    background-color: #3F76BF;
+    background-color: #B3D0D0;
+    cursor:pointer;
   }
 
   & + & {
@@ -74,22 +74,28 @@ const StyledCollapsible = styled(Collapsible)`
 `;
 
 const Header = styled.h1`
-  color:#3F76BF;
+  color:#42D9C8;
   font-family:helvetica;
   text-align: center;
+  margin-top: 45px;
+  font-size: 40px;
 `;
 const Header3 = styled.h3`
   color: white;
-  font-size: 175%;
+  font-size: 23px;
   font-family:helvetica;
   text-align: center;
+  margin-top: 50px;
 `;
 
 const StyledAlert = styled(Alert)`
-  background-color: white;
+  background-color: #EFF7FF;
   font-family:helvetica;
-  color: black;
-  border-radius: 5px;
-  padding: 5px;
+  color: #231123;
+  width: 30%;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 25px;
   text-align: center;
+  margin-bottom: 35px;
 `;

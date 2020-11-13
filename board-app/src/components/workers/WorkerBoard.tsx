@@ -318,29 +318,60 @@ const WorkerBoardE1 = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
+  margin-top: 40px;
 `;
 
 const DesignDiceButton = styled.button`
-  padding: 3px;
-  background-color: red;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  width: 150px;
+  background-color: #82204A;
   color: white;
-  border-color: black;
-  margin-left: 500px;
+  border-radius: 15px;
+  margin-left: 405px;
+  border: 0;
+  margin-bottom: 50px;
+  height: 65px;
+
+  &:hover {
+    background-color: #E79DBD;
+    cursor:pointer;
+  }
 `;
 
 const DevDiceButton = styled.button`
-  padding: 3px;
-  background-color: blue;
+  box-sizing: border-box;
+  width: 150px;
+  padding: 10px 20px;
+  background-color: #558C8C;
   color: white;
-  border-color: black;
-  margin-left: 400px;
+  margin-left: 160px;
+  border-radius: 15px;
+  border: 0;
+  margin-bottom: 50px;
+  height: 65px;
+
+  &:hover {
+    background-color: #B3D0D0;
+    cursor:pointer;
+  }
 `;
 
 const TestDiceButton = styled.button`
-  padding: 3px;
-  background-color: orange;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  width: 150px;
+  background-color: #E8DB7D;
   color: white;
-  border-color: black;
-  margin-left: 400px;
+  margin-left: 180px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  height: 65px;
+  border: 0;
+
+  &:hover {
+    background-color: #F3ECBA;
+    cursor:pointer;
+  }
 `;

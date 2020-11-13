@@ -11,7 +11,7 @@ const history = createBrowserHistory({ basename: "/" });
 // Use createGlobalStyle to change the background of 'body' element
 const GlobalStyle = createGlobalStyle`
   body {
-    background-color: #24292E;
+    background-color: #231123;
   }
 `;
 

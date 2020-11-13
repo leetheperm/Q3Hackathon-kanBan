@@ -158,46 +158,60 @@ const StoryCardInner: FC<StoryCardProps & DraggableStyleProps> = (props) => {
 };
 
 const InnerDiv = styled.div`
+  box-sizing: border-box;
   background-color: white;
+  font-family: Helvetica, sans-serif;
   white-space: pre;
+  width: 100%;
+  padding: 5px;
+  
 `;
 
 const TitleDiv = styled(InnerDiv)`
+  box-sizing: border-box;
   font-size: 125%;
-  text-decoration: underline;
   margin-bottom: 2px;
+  width: 100%;
+  background-color: #231123;
+  color: white;
 `;
 
 const DesignDiv = styled(InnerDiv)`
-  background-color: red;
+  background-color: #82204A;
+  box-sizing: border-box;
   color: White;
-  margin: 1px;
+  width: 100%;
 `;
 
 const DevDiv = styled(InnerDiv)`
-  background-color: blue;
+  box-sizing: border-box;   
+  background-color: #558C8C;
   color: White;
-  margin: 1px;
+  width: 100%;
 `;
 
 const BlockedDiv = styled(InnerDiv)`
-  background-color: pink;
+  background-color: #AF5AAF;
+  box-sizing: border-box;
   color: White;
-  margin: 1px;
+  width: 100%;
 `;
 
 const TestDiv = styled(InnerDiv)`
-  background-color: orange;
-  color: White;
-  margin: 1px;
+  background-color: #E8DB7D;
+  box-sizing: border-box;
+  color: black;
+  width: 100%;
 `;
 
 const StyledDiv = styled.div<DraggableStyleProps>`
+  box-sizing: border-box;
   padding: 3px;
-  background-color: ${(props) => (props.isDragging ? "#d3e4ee" : "black")};
-  border-radius: 4px;
+  background-color: ${(props) => (props.isDragging ? "#A6C9C9" : "#e5eff5")};
+  border-radius: 5px;
   transition: background-color 0.25s ease-out;
   margin: 10px;
+  
 
   &:hover {
     background-color: #f7fafc;
@@ -209,6 +223,10 @@ const StyledDiv = styled.div<DraggableStyleProps>`
 `;
 
 const StyledInput = styled.input`
-  text-align: right;
+  box-sizing: border-box;
   width: 50px;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  border: 1px solid #e5eff5;
 `;

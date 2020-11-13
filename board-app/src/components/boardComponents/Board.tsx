@@ -168,7 +168,11 @@ export const Board: React.FC<BoardProps> = (props) => {
 };
 
 const BoardEl = styled.div`
+  box-sizing: border-box;
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-between;  
+  overflow: scroll;
+  color: #28464B;
+  text-align: center;
 `;

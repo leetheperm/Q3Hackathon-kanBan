@@ -43,11 +43,12 @@ const InnerDiv = styled.div`
   background-color: ${(props) => props.color};
   border-radius: 4px;
   transition: background-color 0.25s ease-out;
+  font-family: Helvetica, sans-serif;
   margin: 10px;
   text-align: center;
 
   &:hover {
-    background-color: #f7fafc;
+    background-color: #EFF7FF;
   }
 
   & + & {
@@ -56,7 +57,7 @@ const InnerDiv = styled.div`
 `;
 
 const getColourForRole = (role: WorkerRole) => {
-  if (role === WorkerRole.Designer) return "red";
-  else if (role === WorkerRole.Developer) return "blue";
-  else if (role === WorkerRole.Tester) return "orange";
+  if (role === WorkerRole.Designer) return "#82204A";
+  else if (role === WorkerRole.Developer) return "#558C8C";
+  else if (role === WorkerRole.Tester) return "#E8DB7D";
 };
