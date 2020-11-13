@@ -24,7 +24,7 @@
 ## Future updates
 
 - [ ] Heroku deployed instance available online
-- [ ] CSS is neatly formatted
+- [x] CSS is neatly formatted
 - [ ] Finance caluclator module added
 - [ ] Cypress E2E tests
 
