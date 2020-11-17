@@ -22,7 +22,7 @@
 - [x] Set of rules
 
 ## Dockerizing container for devs
-![Docker](https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.claranet.de%2Fsites%2Fall%2Fassets%2Fde%2Fblog_docker.png&imgrefurl=https%3A%2F%2Fwww.claranet.de%2Fblog%2F2018-04-12-wie-funktionieren-docker-container&tbnid=tcb_WOZZ981aCM&vet=12ahUKEwjmtIXD1IrtAhUSQhoKHRgbB5oQMygBegUIARDRAQ..i&docid=8NHzAJ6QgEYcBM&w=1200&h=630&q=docker&ved=2ahUKEwjmtIXD1IrtAhUSQhoKHRgbB5oQMygBegUIARDRAQ)
+![Docker](https://www.iconfinder.com/icons/4373190/docker_logo_logos_icon)
 
 To dockerize Kanbanatics first build your image
 ```
