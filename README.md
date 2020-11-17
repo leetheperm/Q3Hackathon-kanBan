@@ -21,6 +21,18 @@
 - [x] Able to move employees to other teams
 - [x] Set of rules
 
+## Dockerizing container for devs
+
+To dockerize Kanbanatics first build your image
+```
+docker build -t board-app:dev .
+```
+
+Then run with this command from the board-app directory once the image is built
+
+```
+ docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true board-app:dev
+```
 ## Future updates
 
 - [ ] Heroku deployed instance available online
@@ -42,3 +54,4 @@ Create Kan-Ban style web-app game with a fixed scenario of teams and agile stori
 * **Harry Black** - *Main developer* - (https://github.com/felination)
 * **Benjamin Frost** - * Project manager* - (TBC)
 * **Silvia Lee** - * Front end development - (https://github.com/silviatheweasel)
+
