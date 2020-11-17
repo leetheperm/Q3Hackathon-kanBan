@@ -24,16 +24,19 @@
 ## Dockerizing container for devs
 ![Docker](https://www.iconfinder.com/icons/4373190/docker_logo_logos_icon)
 
-To dockerize Kanbanatics first build your image
-```
-docker build -t board-app:dev .
-```
-
-Then run with this command from the board-app directory once the image is built
+To dockerize Kanbanatics, just run..
 
 ```
- docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true board-app:dev
+docker-compose up
 ```
+from the board-app directory.
+
+If you want to run a detatched version, so you are free to user the shell, just add
+
+```
+-d
+```
+
 ## Future updates
 
 - [ ] Heroku deployed instance available online
