@@ -2,7 +2,7 @@
 
 
 <!-- badges -->
-![Current board-app version](https://img.shields.io/badge/current%20version-1.0.0-blue)
+![Current board-app version](https://img.shields.io/badge/current%20version-1.0.0-red)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/leetheperm/Q3Hackathon-kanBan)
 
