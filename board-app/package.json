@@ -1,6 +1,6 @@
 {
   "name": "board-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "http://leetheperm.github.io/",
   "private": true,
   "dependencies": {
