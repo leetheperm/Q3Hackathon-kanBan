@@ -12,14 +12,21 @@
 
 ![Open issues on github](https://img.shields.io/github/issues/leetheperm/q3hackathon-kanban)
 
-## Version 1.0.0
 
-- [x] Rollable dice
-- [x] Auto-counted subscribers
-- [x] Cycle day counter
-- [x] Daily alerts when required
-- [x] Able to move employees to other teams
-- [x] Set of rules
+
+## Features / status
+
+<!-- prettier-ignore-start -->
+Feature | Version | Status
+--- | --- | ---
+Rollable dice | 1.0.0 | ✅
+Daily alerts | 1.0.0 | ✅
+Ability to move employees | 1.0.0 | ✅
+Auto-count subs | 1.0.0 | ✅
+Finances auto update | 1.1.x | ❌
+Players locked during roll | 1.1.x | ❌
+Automated tests | 1.1.x | ❌
+
 
 ## Dockerizing container for devs
 ![Docker](https://www.iconfinder.com/icons/4373190/docker_logo_logos_icon)
