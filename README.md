@@ -29,7 +29,6 @@ Automated tests | 1.1.x | ❌
 
 
 ## Dockerizing container for devs
-![Docker](https://www.iconfinder.com/icons/4373190/docker_logo_logos_icon)
 
 To dockerize Kanbanatics, just run..
 
