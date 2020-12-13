@@ -1,4 +1,4 @@
-# Kan-Ban Web Game
+# Kan-Banatics
 
 
 <!-- badges -->
